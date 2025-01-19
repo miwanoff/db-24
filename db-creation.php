@@ -1,8 +1,8 @@
 <?php
-
-$servername = "127.0.0.1";
-$username = "root";
-$password = "";
+require "db-connection.php";
+// $servername = "127.0.0.1";
+// $username = "root";
+// $password = "";
 // Створення з'єднання
 $conn = mysqli_connect($servername, $username, $password);
 // Перевірка з'єднання
@@ -11,7 +11,7 @@ if (!$conn) {
 }
 // Створення бази даних
 //$sql = "CREATE DATABASE dbtest2024";
-$sql = "CREATE DATABASE dbtest24 CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci";
+$sql = "CREATE DATABASE $dbname CHARACTER SET utf8mb4 COLLATE utf8mb4_general_ci";
 if (mysqli_query($conn, $sql)) {
   echo "Database created successfully";
 } else {
